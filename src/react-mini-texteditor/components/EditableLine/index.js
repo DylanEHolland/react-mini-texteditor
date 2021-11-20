@@ -1,17 +1,16 @@
 import React from 'react';
 import './custom.scss';
 
+import { editableLineState } from '../../consts/states';
+
 export default class EditableLine extends React.Component {
-    state = {
-        input: "",
-        updateChar: null,
-        syncing: true
-    };
 
     constructor(props) {
         super(props);
 
         this._onKeyPressCapture.bind(this);
+
+        this.state = editableLineState;
     }
 
     componentDidMount() {
